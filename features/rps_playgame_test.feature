@@ -5,7 +5,7 @@ Feature: Playing vs the computer
     When I click "Play Game"
     When I select "rock"
     And I hit "Submit"
-    Then I should see "Rocco, you have won!"
+    Then I should see "Keep playing to win!"
 
   Scenario: I play a game vs computer and it is a draw
     Given I choose "rock"

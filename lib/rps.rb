@@ -39,6 +39,7 @@ class Rps < Sinatra::Base
     @move1 = session["game"].player1.play params[:move]
     @move2 = session["game"].player2.play
     @winner = session["game"].check
+    @messages = session["game"].messages
     @user = session["user"]
     @computer_score = session["game"].player2.won
     @player1_score = session["game"].player1.won

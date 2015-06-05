@@ -2,14 +2,15 @@ require_relative 'player'
 require_relative 'computer'
 class Game
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :messages
 
   def initialize player1, player2
     @player1 = player1
     @player2 = player2
-    @message = { player1: "#{@user} wins!",
-                 player2: "Computer wins!",
-                 play: "Keep playing to win" }
+    @messages = {:player1 => "#{@user} wins!",
+                 :player2 => "Computer wins!",
+                 :draw => "DRAW!",
+                 :play => "Keep playng to win"}
   end
 
   def restart_game
@@ -20,9 +21,11 @@ class Game
   def check
     a = player1.moves
     b = player2.moves
+    @draw = false;
+
 
     if a == b
-      :draw
+      @draw = true
     elsif a == :rock && b == :scissors
       @player1.won += 1
     elsif a == :scissors && b == :paper
@@ -37,16 +40,14 @@ class Game
 
   def winner
     if @player1.won == 3
-      winning_message(:player1)
+      :player1
     elsif @player2.won == 3
-      winning_message(:player2)
+      :player2
+    elsif @draw == true
+      :draw
     else
-      winning_message(:play)
+      :play
     end
-  end
-
-  def winning_message winner
-    @message[winner]
   end
 end
 
