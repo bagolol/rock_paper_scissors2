@@ -5,12 +5,13 @@ class Game
   attr_reader :player1, :player2, :messages
 
   def initialize player1, player2
+
     @player1 = player1
     @player2 = player2
     @messages = {:player1 => "#{@user} wins!",
                  :player2 => "Computer wins!",
                  :draw => "DRAW!",
-                 :play => "Keep playng to win"}
+                 :play => "Keep playing to win!"}
   end
 
   def restart_game

@@ -5,4 +5,5 @@ describe Player do
     subject.play "scissors"
     expect(subject.moves).not_to eq nil
   end
+
 end

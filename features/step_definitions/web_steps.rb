@@ -7,7 +7,7 @@ When(/^I click "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
-  expect(page).to have_content text
+  expect(page).to have_content(text)
 end
 
 When(/^I enter "([^"]*)"$/) do |name|
@@ -45,10 +45,18 @@ Given(/^I choose "([^"]*)"$/) do |move|
   select(move, from: "move")
 end
 
-Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |_arg1, _arg2|
+Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |result, replay|
+   expect(page).to have_content(result && replay)
 
 end
 
+Given(/^I have submited my "([^"]*)" "([^"]*)" times$/) do |move, times|
+   visit("game/new")
+  fill_in("value", with: "name")
+  click_button("Submit")
+  click_link("Play Game")
+  select(move, from: "move")
+end
 
 
 

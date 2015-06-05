@@ -3,13 +3,20 @@
    <% if @winner == :draw %>
 
     </br>
+    <div class="draw">
       <%= @messages[:draw] %>
+    </div>
+    <div class="play">
+      <%= @messages[:play] %>
+    </div>
         <p>Computer = <%= @computer_score %></p>
         <p><%=@user %> = <%= @player1_score %> </p>
         <a href='/game'>Next move</a>
 
   <% elsif @winner == :play %>
+    <div class="play">
       <%= @messages[:play] %>
+    </div>
         <p>Computer = <%= @computer_score %></p>
         <p><%=@user %> = <%= @player1_score %> </p>
         <a href='/game'>Next move</a>
@@ -17,13 +24,13 @@
   <% elsif @winner == :player1 %>
         <p>Computer = <%= @computer_score %></p>
         <p><%=@user %> = <%= @player1_score %> </p>
-    <p><span style="color:red"><%= @user %>, you have won!</span></p>
+    <p><span class="winner" style="color:red"><%= @user %>, you have won!</span></p>
     </br>
     <a href='/game/new'>New Game?</a>
     <% else %>
         <p>Computer = <%= @computer_score %></p>
         <p><%=@user %> = <%= @player1_score %> </p>
-      <p><span style="color:red"><%= @user %>, you have lost!</span></p>
+      <p><span class="loser" style="color:red"><%= @user %>, you have lost!</span></p>
       </br>
       <a href='/game/new'>New Game?</a>
     <% end %>
