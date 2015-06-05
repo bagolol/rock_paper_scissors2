@@ -7,9 +7,9 @@ class Game
   def initialize player1, player2
     @player1 = player1
     @player2 = player2
-    @message = {:player1 => "#{@user} wins!",
-               :player2 => "Computer wins!",
-               :play => "Keep playing to win"}
+    @message = { player1: "#{@user} wins!",
+                 player2: "Computer wins!",
+                 play: "Keep playing to win" }
   end
 
   def restart_game
@@ -26,7 +26,7 @@ class Game
     elsif a == :rock && b == :scissors
       @player1.won += 1
     elsif a == :scissors && b == :paper
-     @player1.won += 1
+      @player1.won += 1
     elsif a == :paper && b == :rock
       @player1.won += 1
     else

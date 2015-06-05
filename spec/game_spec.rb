@@ -2,8 +2,8 @@ require 'game'
 
 describe Game do
 
-  let (:player1) {double :player}
-  let (:player2) {double :computer}
+  let (:player1) { double :player }
+  let (:player2) { double :computer }
 
   it 'can declare a winner' do
     game = Game.new player1, player2

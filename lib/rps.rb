@@ -4,9 +4,8 @@ require './lib/player'
 require './lib/computer'
 
 class Rps < Sinatra::Base
-    set :views, Proc.new { File.join(root, "..", "views") }
-    enable :sessions
-
+  set :views, proc { File.join(root, "..", "views") }
+  enable :sessions
 
   get '/' do
     session["user"] = nil
@@ -22,7 +21,7 @@ class Rps < Sinatra::Base
 
   get '/game/new' do
 
-    if session["user"] != nil
+    if !session["user"].nil?
       session["game"].restart_game
       redirect '/game'
     else
@@ -46,8 +45,7 @@ class Rps < Sinatra::Base
     erb :result
   end
 
-
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
 

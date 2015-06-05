@@ -11,7 +11,7 @@ Then(/^I should see "([^"]*)"$/) do |text|
 end
 
 When(/^I enter "([^"]*)"$/) do |name|
-  fill_in("value", :with => name)
+  fill_in("value", with: name)
 end
 
 When(/^I hit "([^"]*)"$/) do |submit|
@@ -25,12 +25,12 @@ end
 
 Given(/^I have submitted "([^"]*)" as my name$/) do|name|
   visit("game/new")
-  fill_in("value", :with => name)
+  fill_in("value", with: name)
   click_button("Submit")
 end
 
 When(/^I select "([^"]*)"$/) do |move|
-  select(move, :from => "move")
+  select(move, from: "move")
 end
 
 Then(/^I should see a result$/) do
@@ -39,13 +39,13 @@ end
 
 Given(/^I choose "([^"]*)"$/) do |move|
   visit("game/new")
-  fill_in("value", :with => "name")
+  fill_in("value", with: "name")
   click_button("Submit")
   click_link("Play Game")
-  select(move, :from => "move")
+  select(move, from: "move")
 end
 
-Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |arg1, arg2|
+Then(/^I Should see "([^"]*)" and "([^"]*)"$/) do |_arg1, _arg2|
 
 end
 
