@@ -1,7 +1,5 @@
 require 'sinatra/base'
 require './lib/game'
-# require './lib/player'
-# require './lib/computer'
 
 class Rps < Sinatra::Base
   set :views, proc { File.join(root, "views") }
@@ -46,7 +44,6 @@ class Rps < Sinatra::Base
     redirect '/game'
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 end
 

@@ -1,4 +1,4 @@
-require_relative 'player' # perche' qui ci va require?
+require_relative 'player'
 
 class Computer < Player
 
@@ -9,3 +9,4 @@ class Computer < Player
     choices.push move
   end
 end
+
