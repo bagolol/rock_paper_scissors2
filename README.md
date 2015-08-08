@@ -14,3 +14,13 @@ Technologies used:
 - Tested using RSpec and Capybara
 
 
+How to run the tests
+-------
+
+```
+clone the repo
+cd into the folder
+bundle install
+rspec
+
+```
