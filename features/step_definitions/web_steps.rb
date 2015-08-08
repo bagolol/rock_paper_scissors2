@@ -2,7 +2,6 @@ Given(/^I am on the homepage "([^"]*)"$/) do |link|
   visit(link)
 end
 
-<<<<<<< HEAD
 Then(/^I should see the "([^"]*)" element$/) do |element|
   page.has_css?(".#{element}")
 end
