@@ -7,6 +7,7 @@ class Game
   WINNING_COMBOS = { rock: :scissors,
                      scissors: :paper,
                      paper: :rock }
+  WINNING_SCORE = 2
 
   attr_reader :player1, :player2, :score
 
@@ -30,9 +31,9 @@ class Game
   end
 
   def declare_winner
-    if score[:player1] == 2
+    if score[:player1] == WINNING_SCORE
       player1.name
-    elsif score[:player2] == 2
+    elsif score[:player2] == WINNING_SCORE
       player2.name
     end
   end

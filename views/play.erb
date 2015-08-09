@@ -18,28 +18,25 @@
       <input id="scissors" class="scissors" type="submit" name="move" value="scissors" required>
     </form>
   </section>
-   <section class="center">
+  <section class="center">
     <% if @winner %>
       <h2><%= @winner %> wins</h2>
       <p><a href="/">Start new game</a></p>
       </div>
     <%end%>
-  <div class="fight">
+    <div class="fight">
       <div class="wrapper" id="first">
         <h2 class="name"><%= @player1.upcase %></h2>
       </div>
-        <h2><%= @player2.upcase %></h2>
+      <h2><%= @player2.upcase %></h2>
       <div class="element <%= @player1_move %> fade_in"></div>
       <div class="vs">VS</div>
       <div class="element <%= @player2_move %> fade_in"></div>
     </div>
-  </div>
       <div class="wrapper" id="first">
         <h2 class="score"><%= @player1_score %></h2>
       </div>
-        <h2><%= @player2_score %></h2>
-    </div>
-  </div>
-</section>
+    <h2><%= @player2_score %></h2>
+  </section>
 <% end %>
 
