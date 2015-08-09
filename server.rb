@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require './lib/game'
 
+
+
 class Rps < Sinatra::Base
   set :views, proc { File.join(root, "views") }
   enable :sessions
@@ -16,7 +18,7 @@ class Rps < Sinatra::Base
     session["user"] = params[:name]
     @player1 = session["user"]
     opponent = params[:opponent]
-    user = Player.new @player
+    user = Player.new @player1
 
     if opponent == 'Computer'
       session["game"] = Game.new user, Computer.new
@@ -33,7 +35,7 @@ class Rps < Sinatra::Base
     @player2 = session["game"].player2.name
     @player1_move = session["game"].player1.last_move
     @player2_move = session["game"].player2.last_move
-    @result = session["game"].declare_winner
+    @winner = session["game"].declare_winner
     erb :play
   end
 
