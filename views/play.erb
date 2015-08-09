@@ -10,7 +10,6 @@
 <% else %>
   <section class="center">
     <h2>Make your choice <%= @player1 %> !</h2>
-
   </section>
   <section class="center">
     <form action="/game" method="post">
@@ -20,34 +19,25 @@
     </form>
   </section>
    <section class="center">
-     <% if @winner %>
-    <h2><%= @winner %> wins</h2>
-    <p><a href="/">
-    Start new game
-    </a></p>
-    </div>
+    <% if @winner %>
+      <h2><%= @winner %> wins</h2>
+      <p><a href="/">Start new game</a></p>
+      </div>
     <%end%>
   <div class="fight">
-    <div class="wrapper">
-      <div id="first">
-        <h2><%= @player1.upcase %></h2>
+      <div class="wrapper" id="first">
+        <h2 class="name"><%= @player1.upcase %></h2>
       </div>
-      <div id="second">
         <h2><%= @player2.upcase %></h2>
-      </div>
+      <div class="element <%= @player1_move %> fade_in"></div>
+      <div class="vs">VS</div>
+      <div class="element <%= @player2_move %> fade_in"></div>
     </div>
-    <div class="element <%= @player1_move %> fade_in"></div>
-    <div class="vs">VS</div>
-    <div class="element <%= @player2_move %> fade_in"></div>
   </div>
-  </div>
-    <div class="wrapper">
-      <div id="first">
-        <h2><%= @player1_score %></h2>
+      <div class="wrapper" id="first">
+        <h2 class="score"><%= @player1_score %></h2>
       </div>
-      <div id="second">
         <h2><%= @player2_score %></h2>
-      </div>
     </div>
   </div>
 </section>

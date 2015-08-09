@@ -19,6 +19,14 @@ h2 {
   color: #0884CC;
 }
 
+h2.score {
+  margin-left: 70px;
+}
+
+h2.name {
+  margin-left: -25px;
+}
+
 a {
   color: #DCDCDC;
   text-decoration: none;
@@ -38,9 +46,15 @@ img {
 #wrapper {
     width: 400px;
     border: 1px solid black;
-    overflow: hidden; /* add this to contain floated children */
+    overflow: hidden;
+    /* add this to contain floated children */
 }
 #first {
+    width: 230px;
+    float:left; /* add this */
+}
+
+#second {
     width: 230px;
     float:left; /* add this */
 }
