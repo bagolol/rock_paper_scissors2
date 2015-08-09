@@ -29,7 +29,7 @@ Interface:
 -------
 The app is currently hosted on heroku. Feel free to play with it [here](http://rocco-paper-scissors.herokuapp.com/)
 
-![homepage](/public/img/rock_paper_sciss.jpg)
+![homepage](/public/img/rock_paper_sciss.png)
 
 
 Thanks:
