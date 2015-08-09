@@ -20,6 +20,13 @@
     </form>
   </section>
    <section class="center">
+     <% if @winner %>
+    <h2><%= @winner %> wins</h2>
+    <p><a href="/">
+    Start new game
+    </a></p>
+    </div>
+    <%end%>
   <div class="fight">
     <div class="wrapper">
       <div id="first">
@@ -42,12 +49,6 @@
         <h2><%= @player2_score %></h2>
       </div>
     </div>
-    <% if @winner %>
-    <h2><%= @winner %> wins</h2>
-    <p><a href="/">
-    Start new game
-    </a></p>
-    <%end%>
   </div>
 </section>
 <% end %>
