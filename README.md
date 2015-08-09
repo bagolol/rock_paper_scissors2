@@ -23,7 +23,7 @@ clone the repo
 cd into the folder
 bundle install
 rspec
-
+cucumber
 ```
 Interface:
 -------
