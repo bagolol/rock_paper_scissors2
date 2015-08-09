@@ -16,6 +16,13 @@ Feature: Starting the game
     Then I see "Make your choice Rocco !"
 
 
+  Scenario: player1 doesn't enter a name
+    Given I am on the homepage "/"
+    When I enter ""
+    When I hit "Computer"
+    Then I see "You have to provide a name!"
+
+
 
 
 
