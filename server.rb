@@ -4,6 +4,7 @@ require './lib/game'
 class Rps < Sinatra::Base
   set :views, proc { File.join(root, "views") }
   enable :sessions
+  set :session_secret, 'supersecretsecret'
 
   get '/' do
     session["user"] = nil
